@@ -9,8 +9,13 @@ func allPairs(input []byte) [][]byte {
 		return [][]byte{}
 	}
 
-	for i := 0; i < len(input); i++ {
-		result = append(result, []byte{input[0], input[i]})
+	temp := []byte{}
+	for i := 1; i < len(input); i++ {
+		temp = append(temp, input[0])
+		temp = append(temp, input[i])
+		result = append(result, temp)
+		temp = []byte{}
+		// result = append(result, []byte{input[0], input[i]})
 	}
 
 	res := allPairs(input[1:])
