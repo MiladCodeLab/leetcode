@@ -5,7 +5,9 @@ import (
 )
 
 func helper(c []string) []string {
-
+	if len(c) == 0 {
+		return nil
+	}
 	if len(c) == 1 {
 		var result []string
 		for _, v := range c[0] {
@@ -28,6 +30,10 @@ func helper(c []string) []string {
 }
 
 func letterCombinations(digits string) []string {
+	if len(digits) == 0 {
+		return nil
+	}
+
 	d := map[string]string{
 		"2": "abc",
 		"3": "def",
